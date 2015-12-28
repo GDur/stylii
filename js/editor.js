@@ -1379,7 +1379,10 @@ toolPen.updateTail = function (point) {
     var prevHandleOut = path.segments[nsegs - 1].point.add(path.segments[nsegs - 1].handleOut);
 
     tail.moveTo(prevPoint);
-    tail.cubicCurveTo(prevHandleOut, point, point);
+    if (this.mode == 'close')
+        tail.cubicCurveTo(prevHandleOut, path.segments[0].handleIn.add(path.segments[0].point), point);
+    else
+        tail.cubicCurveTo(prevHandleOut, point, point);
 
     tail.removeOn({
         drag: true,
