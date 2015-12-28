@@ -1,0 +1,36 @@
+{
+  "name": "stylii",
+  "version": "1.0.0",
+  "description": "Tiny vector program which has the most basic/neccessary tools to create vector graphics in the web. Based on paperjs.",
+  "main": "js/editor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/memononen/stylii.git"
+  },
+  "keywords": [
+    "vector",
+    "program",
+    "web",
+    "bezier",
+    "background",
+    "image",
+    "save",
+    "import",
+    "export",
+    "load",
+    "upload",
+    "create"
+  ],
+  "author": "memononen, GDur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/memononen/stylii/issues"
+  },
+  "homepage": "https://github.com/memononen/stylii#readme",
+  "dependencies": {
+    "material-design-lite": "^1.0.6"
+  }
+}

@@ -1,206 +1,219 @@
 body {
-	margin: 0;
-	overflow: hidden;
-	font-family: Helvetica, sans-serif;
-	font-size: 14px;
+    margin: 0;
+    overflow: hidden;
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
 }
 
 #tools {
-	position: fixed;
-	left: 40px;
-	top: 50px;
-	width: 28px;
-	padding: 0;
-	background: #fff;
-	background: rgba(255,255,255,0.8);
-	margin: 0;
-	box-shadow: 0px 3px 6px rgba(0,0,0,0.4);
+    top: 50px;
+
+}
+
+#tools, #menu {
+    position: fixed;
+    width: 28px;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.8);
+    margin: 4px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.4);
 }
 
 #menu {
-	position: fixed;
-	left: 5px;
-	top: 5px;
-	padding: 4px;
-	background: rgba(255,255,255,0.5);
+    position: fixed;
+    width: auto;
 }
 
+label span,
 #menu a {
-	padding: 2px 6px;
-	text-decoration: none;
-	color: #000;
-	cursor: default;
+    min-width: inherit;
+    color: #000;
+    cursor: default;
+}
+
+.mdl-button {
+    min-width: inherit;
 }
 
 #menu a.disabled {
-	color: #888;
+    color: #888;
 }
 
+label span:hover,
 #menu a:hover {
-	background: rgba(0,0,0,0.9);
-	color: #fff;
+    color: #fff;
 }
 
 #menu a.disabled:hover {
-	background: transparent;
-	color: #888;
+    background: transparent;
+    color: #888;
 }
 
 #menu a:active {
-	background: rgba(0,0,0,1.0);
-	color: #ddd;
+    background: rgba(0, 0, 0, 1.0);
+    color: #ddd;
 }
 
 .button {
-	display: inline-block;
-	cursor: default;
-	padding: 4px;
+    display: inline-block;
+    cursor: default;
+    padding: 4px;
 }
 
 .button:last-child {
-	margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .button:hover {
-	background: #222;
+    background: #222;
 }
 
 .button.selected {
-	background: #888;
+    background: #888;
 }
 
 .button.selected:hover {
-	background: rgba(0,0,0,0.9);
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.sp-replacer.sp-light {
+    background: none;
+    border: none;
+}
+
+.mdl-button:hover {
+    background-color: rgba(158, 158, 158, .2);
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff !important;
 }
 
 .cursor-pen-create {
-	cursor: url('../img/cursor-pen-create.png') 6 2, default;
+    cursor: url('../img/cursor-pen-create.png') 6 2, default;
 }
 
 .cursor-pen-add {
-	cursor: url('../img/cursor-pen-add.png') 6 2, default;
+    cursor: url('../img/cursor-pen-add.png') 6 2, default;
 }
 
 .cursor-pen-remove {
-	cursor: url('../img/cursor-pen-remove.png') 6 2, default;
+    cursor: url('../img/cursor-pen-remove.png') 6 2, default;
 }
 
 .cursor-pen-edit {
-	cursor: url('../img/cursor-pen-edit.png') 6 2, default;
+    cursor: url('../img/cursor-pen-edit.png') 6 2, default;
 }
 
 .cursor-pen-close {
-	cursor: url('../img/cursor-pen-close.png') 6 2, default;
+    cursor: url('../img/cursor-pen-close.png') 6 2, default;
 }
 
 .cursor-pen-adjust {
-	cursor: url('../img/cursor-pen-adjust.png') 6 2, default;
+    cursor: url('../img/cursor-pen-adjust.png') 6 2, default;
 }
 
 .cursor-pen-join {
-	cursor: url('../img/cursor-pen-join.png') 6 2, default;
+    cursor: url('../img/cursor-pen-join.png') 6 2, default;
 }
 
 .cursor-zoom-in {
-	cursor: url('../img/cursor-zoom-in.png') 7 7, default;
+    cursor: url('../img/cursor-zoom-in.png') 7 7, default;
 }
 
 .cursor-zoom-out {
-	cursor: url('../img/cursor-zoom-out.png') 7 7, default;
+    cursor: url('../img/cursor-zoom-out.png') 7 7, default;
 }
 
 .cursor-hand {
-	cursor: url('../img/cursor-hand.png') 10 10, default;
+    cursor: url('../img/cursor-hand.png') 10 10, default;
 }
 
 .cursor-hand-grab {
-	cursor: url('../img/cursor-hand-grab.png') 10 10, default;
+    cursor: url('../img/cursor-hand-grab.png') 10 10, default;
 }
 
 .cursor-arrow-black {
-	cursor: url('../img/cursor-arrow-black.png') 2 2, default;
+    cursor: url('../img/cursor-arrow-black.png') 2 2, default;
 }
 
 .cursor-arrow-black-point {
-	cursor: url('../img/cursor-arrow-black-point.png') 2 2, default;
+    cursor: url('../img/cursor-arrow-black-point.png') 2 2, default;
 }
 
 .cursor-arrow-black-shape {
-	cursor: url('../img/cursor-arrow-black-shape.png') 2 2, default;
+    cursor: url('../img/cursor-arrow-black-shape.png') 2 2, default;
 }
 
 .cursor-arrow-white {
-	cursor: url('../img/cursor-arrow-white.png') 2 2, default;
+    cursor: url('../img/cursor-arrow-white.png') 2 2, default;
 }
 
 .cursor-arrow-white-point {
-	cursor: url('../img/cursor-arrow-white-point.png') 2 2, default;
+    cursor: url('../img/cursor-arrow-white-point.png') 2 2, default;
 }
 
 .cursor-arrow-white-shape {
-	cursor: url('../img/cursor-arrow-white-shape.png') 2 2, default;
+    cursor: url('../img/cursor-arrow-white-shape.png') 2 2, default;
 }
 
 .cursor-arrow-small {
-	cursor: url('../img/cursor-arrow-small.png') 2 2, default;
+    cursor: url('../img/cursor-arrow-small.png') 2 2, default;
 }
 
 .cursor-arrow-small-point {
-	cursor: url('../img/cursor-arrow-small-point.png') 2 2, default;
+    cursor: url('../img/cursor-arrow-small-point.png') 2 2, default;
 }
 
 .cursor-arrow-duplicate {
-	cursor: url('../img/cursor-arrow-duplicate.png') 2 2, default;
+    cursor: url('../img/cursor-arrow-duplicate.png') 2 2, default;
 }
 
 .cursor-scale-0 {
-	cursor: url('../img/cursor-scale-0.png') 9 9, default;
+    cursor: url('../img/cursor-scale-0.png') 9 9, default;
 }
 
 .cursor-scale-45 {
-	cursor: url('../img/cursor-scale-45.png') 9 9, default;
+    cursor: url('../img/cursor-scale-45.png') 9 9, default;
 }
 
 .cursor-scale-90 {
-	cursor: url('../img/cursor-scale-90.png') 9 9, default;
+    cursor: url('../img/cursor-scale-90.png') 9 9, default;
 }
 
 .cursor-scale-135 {
-	cursor: url('../img/cursor-scale-135.png') 9 9, default;
+    cursor: url('../img/cursor-scale-135.png') 9 9, default;
 }
 
 .cursor-rotate-0 {
-	cursor: url('../img/cursor-rotate-0.png') 9 9, default;
+    cursor: url('../img/cursor-rotate-0.png') 9 9, default;
 }
 
 .cursor-rotate-45 {
-	cursor: url('../img/cursor-rotate-45.png') 9 9, default;
+    cursor: url('../img/cursor-rotate-45.png') 9 9, default;
 }
 
 .cursor-rotate-90 {
-	cursor: url('../img/cursor-rotate-90.png') 9 9, default;
+    cursor: url('../img/cursor-rotate-90.png') 9 9, default;
 }
 
 .cursor-rotate-135 {
-	cursor: url('../img/cursor-rotate-135.png') 9 9, default;
+    cursor: url('../img/cursor-rotate-135.png') 9 9, default;
 }
 
 .cursor-rotate-180 {
-	cursor: url('../img/cursor-rotate-180.png') 9 9, default;
+    cursor: url('../img/cursor-rotate-180.png') 9 9, default;
 }
 
 .cursor-rotate-225 {
-	cursor: url('../img/cursor-rotate-225.png') 9 9, default;
+    cursor: url('../img/cursor-rotate-225.png') 9 9, default;
 }
 
 .cursor-rotate-270 {
-	cursor: url('../img/cursor-rotate-270.png') 9 9, default;
+    cursor: url('../img/cursor-rotate-270.png') 9 9, default;
 }
 
 .cursor-rotate-315 {
-	cursor: url('../img/cursor-rotate-315.png') 9 9, default;
+    cursor: url('../img/cursor-rotate-315.png') 9 9, default;
 }
-
 
 #canvas {
 }

@@ -1,30 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Stylii</title>
-	<link rel="stylesheet" href="css/style.css">
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/paper.js"></script>
-	<script type="text/javascript" src="js/editor.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylii</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/paper.js"></script>
+    <script type="text/javascript" src="js/editor.js"></script>
+    <link rel="stylesheet" href="node_modules/material-design-lite/material.min.css">
+    <script src="node_modules/material-design-lite/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src='js/spectrum/spectrum.js'></script>
+    <link rel='stylesheet' href='js/spectrum/spectrum.css'/>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div id="menu">
-		<a id="undo">Undo</a>
-		<a id="redo">Redo</a>
-		-
-		<a id="cut">Cut</a>
-		<a id="copy">Copy</a>
-		<a id="paste">Paste</a>
-		-
-		<a id="delete">Delete</a>
-	</div>
-	<ul id="tools">
-		<li id="tool-select" class="button"><img src="img/icon-arrow-black.png" /></li>
-		<li id="tool-direct-select" class="button"><img src="img/icon-arrow-white.png" /></li>
-		<li id="tool-pen" class="button"><img src="img/icon-pen.png" /></li>
-		<li id="tool-zoompan" class="button"><img src="img/icon-hand.png" /></li>
-	</ul>
-	<canvas id="canvas" resize></canvas>
+<div id="menu">
+    <a id="undo" class="mdl-button mdl-js-button mdl-js-ripple-effect">Undo</a>
+    <a id="redo" class="mdl-button mdl-js-button mdl-js-ripple-effect">Redo</a>
+    -
+    <a id="cut" class="mdl-button mdl-js-button mdl-js-ripple-effect">Cut</a>
+    <a id="copy" class="mdl-button mdl-js-button mdl-js-ripple-effect">Copy</a>
+    <a id="paste" class="mdl-button mdl-js-button mdl-js-ripple-effect">Paste</a>
+    -
+    <a id="delete" class="mdl-button mdl-js-button mdl-js-ripple-effect">Delete</a>
+    <a id="save-as-svg" class="mdl-button mdl-js-button mdl-js-ripple-effect">Save as SVG</a>
+    <label for="files" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+        Upload/Insert Image
+    </label>
+    <input style="visibility: hidden; position: absolute;" type="file" id="files" name="files[]" multiple/>
+    <output id="list"></output>
+
+    <input type='text' id="fill-color"/>
+    <input type='text' id="stroke-color"/>
+</div>
+<ul id="tools">
+    <li id="tool-select" class="button"><img src="img/icon-arrow-black.png"/></li>
+    <li id="tool-direct-select" class="button"><img src="img/icon-arrow-white.png"/></li>
+    <li id="tool-pen" class="button"><img src="img/icon-pen.png"/></li>
+    <li id="tool-zoompan" class="button"><img src="img/icon-hand.png"/></li>
+</ul>
+<canvas id="canvas" resize></canvas>
 </body>
 </html>
