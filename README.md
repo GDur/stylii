@@ -6,6 +6,11 @@ DEMO
 ==
  [stylii live demo](https://dl.dropboxusercontent.com/u/8938703/workspace/web/stylii/editor.html)
 
+How to use
+==
+ - Hotkey Modifiers
+  - Bezier HandlerIn and Handler Our: control=mirror, shift=45° angle snap
+
 TODO ordered by priority (might change suddenly)
 ==
   - [x] pressing control will cause handler mirroring
@@ -42,7 +47,7 @@ Used Libraries
  - [npm/nodejs](https://nodejs.org/en/)
  - [spectrum colorchooser](https://bgrins.github.io/spectrum/)
   
-How to use
+How to start developing on your own
 ==
   1. download the zip and extract OR git clone this project
   2. go to the root folder and use command "npm install" in order to load the missing node modules
