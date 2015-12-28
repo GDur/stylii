@@ -1614,6 +1614,11 @@ toolPen.on({
             }
         }
 
+        // select handleOut of previous segment too
+        if (this.currentSegment.index > 0)
+            this.currentSegment.path.segments[this.currentSegment.index - 1].handleOut.selected = true
+
+        // select newest segment
         if (this.currentSegment)
             this.currentSegment.selected = true;
     },
