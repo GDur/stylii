@@ -1488,7 +1488,12 @@ toolPen.on({
         this.currentSegment = null;
     },
     mousedown: function (event) {
-
+        //
+        //if (event.event.which === 3) {
+        //    console.log("sdf")
+        //    this.mode = 'close'
+        //    //this.closePath();
+        //}
         deselectAllPoints();
 
         if (this.mode == 'create') {
