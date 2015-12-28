@@ -1,7 +1,11 @@
 # Stylii
  - a vector program for the web.
- - GDur: I contribute to this project with the aim to create a clean and userfriendly vector program for the web, which can load background images and is able to create bezier lines
+ - GDur: "I contribute to this project with the aim to create a clean and userfriendly vector program for the web, which can load background images and is able to create and edit bezier lines."
  
+DEMO
+==
+ [stylii live demo](https://dl.dropboxusercontent.com/u/8938703/workspace/web/stylii/editor.html)
+
 TODO ordered by priority (might change suddenly)
 ==
   - [x] pressing control will cause handler mirroring
@@ -12,11 +16,14 @@ TODO ordered by priority (might change suddenly)
   - [x] export/save as svg
   - [x] make use of the material lite design (mdl)
   - [x] add color chooser module
+  - [x] add live demo link to repo
   - [x] path TODO
     - [x] fill option for closed path's
   - [ ] stroke TODO
     - [ ] adjustable width
     - [x] adjustable color
+  - [ ] refactor / split editor.js into multiple modular files 
+  - [ ] add property panel with styling options
   - [ ] lazy load and save to localstorage
   - [ ] import/load an svg-file
   - [ ] layers
@@ -30,6 +37,7 @@ Used Libraries
  - [memononen's stylii as base](https://github.com/memononen/stylii)
  - [material lite design](http://www.getmdl.io/)
  - [npm/nodejs](https://nodejs.org/en/)
+ - [spectrum colorchooser](https://bgrins.github.io/spectrum/)
   
 How to use
 ==
