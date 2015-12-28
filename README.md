@@ -41,7 +41,6 @@ Used Libraries
   
 How to use
 ==
-  1. option a: download the zip and extract
-     option b:git clone this project
+  1. download the zip and extract OR git clone this project
   2. go to the root folder and use command "npm install" in order to load the missing node modules
   3. load/start the index.html via browser
