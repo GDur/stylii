@@ -23,9 +23,10 @@ TODO ordered by priority (might change suddenly)
     - [ ] adjustable width
     - [x] adjustable color
   - [ ] refactor / split editor.js into multiple modular files 
+  - [ ] fix bug when creating bezier on top of image
+  - [ ] import/load an svg-file
   - [ ] add property panel with styling options
   - [ ] lazy load and save to localstorage
-  - [ ] import/load an svg-file
   - [ ] layers
     - [ ] show layers
     - [ ] later - make use of folder structure and drag and drop stuff
