@@ -30,6 +30,7 @@ TODO ordered by priority (might change suddenly)
     - [ ] show layers
     - [ ] later - make use of folder structure and drag and drop stuff
   - [ ] add library which can assign a hotkey to each button
+  - [ ] add path-simplification-tool [live example demo](http://paperjs.org/examples/path-simplification/)
 
 Used Libraries
 ==
