@@ -1413,11 +1413,6 @@ toolPen.hitTest = function (event, type) {
     if (event.point)
         result = paper.project.hitTest(event.point, {segments: true, stroke: true, tolerance: hitSize});
 
-    if (result != null && previousResult != null && result.item != previousResult.item) {
-
-        console.log("hitres:", result)
-        previousResult = result
-    }
     if (result) {
         if (result.type == 'stroke') {
             if (result.item.selected) {
@@ -1465,7 +1460,7 @@ toolPen.hitTest = function (event, type) {
         }
     }
 
-    if (!result) {
+    if (!result || result.type == 'pixel') {
         this.mode = 'create';
         setCanvasCursor('cursor-pen-create');
         if (event.point)
