@@ -19,18 +19,19 @@ TODO ordered by priority (might change suddenly)
   - [x] add live demo link to repo
   - [x] path TODO
     - [x] fill option for closed path's
-  - [ ] stroke TODO
-    - [ ] adjustable width
-    - [x] adjustable color
   - [ ] refactor / split editor.js into multiple modular files 
   - [ ] fix bug when creating bezier on top of image
   - [ ] import/load an svg-file
   - [ ] add property panel with styling options
   - [ ] lazy load and save to localstorage
+  - [ ] stroke TODO
+    - [ ] adjustable width
+    - [x] adjustable color
   - [ ] layers
     - [ ] show layers
     - [ ] later - make use of folder structure and drag and drop stuff
   - [ ] add library which can assign a hotkey to each button
+  - [ ] add color copy tool/option
   - [ ] add path-simplification-tool [live example demo](http://paperjs.org/examples/path-simplification/)
 
 Used Libraries
