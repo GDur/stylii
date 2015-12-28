@@ -25,7 +25,7 @@ TODO ordered by priority (might change suddenly)
   - [x] path TODO
     - [x] fill option for closed path's
   - [ ] refactor / split editor.js into multiple modular files 
-  - [ ] fix bug when creating bezier on top of image
+  - [x] fix bug when creating bezier on top of image
   - [ ] import/load an svg-file
   - [ ] add property panel with styling options
   - [ ] lazy load and save to localstorage
