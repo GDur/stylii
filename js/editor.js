@@ -714,8 +714,12 @@ toolSelect.on({
                 deselectAll();
 
             var selectedPaths = getPathsIntersectingRect(box);
-            for (var i = 0; i < selectedPaths.length; i++)
+            for (var i = 0; i < selectedPaths.length; i++) {
+                console.log(selectedPaths)
+                //if (selectedPaths[i].guide)
+                //    console.log("asdasd")
                 selectedPaths[i].selected = !selectedPaths[i].selected;
+            }
         }
 
         updateSelectionState();
@@ -1841,6 +1845,7 @@ $(document).ready(function () {
 
     var path1 = new paper.Path.Circle(new paper.Point(130, 270), 60);
     path1.strokeColor = 'black';
+
     var path2 = new paper.Path.Circle(new paper.Point(130, 160), 40);
     path2.fillColor = 'grey';
     path2.selected = true
