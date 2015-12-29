@@ -16,10 +16,10 @@ toolZoomPan.testHot = function (type, event, mode) {
     return this.hitTest(event);
 };
 toolZoomPan.hitTest = function (event) {
-    if (event.modifiers.command) {
-        if (event.modifiers.command && !event.modifiers.option) {
+    if (event.modifiers.shift) {
+        if (event.modifiers.shift && !event.modifiers.option) {
             setCanvasCursor('cursor-zoom-in');
-        } else if (event.modifiers.command && event.modifiers.option) {
+        } else if (event.modifiers.shift && event.modifiers.option) {
             setCanvasCursor('cursor-zoom-out');
         }
     } else {
@@ -38,10 +38,10 @@ toolZoomPan.on({
     mousedown: function (event) {
         this.mouseStartPos = event.point.subtract(paper.view.center);
         this.mode = '';
-        if (event.modifiers.command) {
+        if (event.modifiers.shift) {
             this.mode = 'zoom';
         } else {
-            setCanvasCursor('cursor-hand-grab');
+            //setCanvasCursor('cursor-hand-grab');
             this.mode = 'pan';
         }
     },
@@ -49,10 +49,10 @@ toolZoomPan.on({
         if (this.mode == 'zoom') {
             var zoomCenter = event.point.subtract(paper.view.center);
             var moveFactor = this.zoomFactor - 1.0;
-            if (event.modifiers.command && !event.modifiers.option) {
+            if (event.modifiers.shift && !event.modifiers.option) {
                 paper.view.zoom *= this.zoomFactor;
                 paper.view.center = paper.view.center.add(zoomCenter.multiply(moveFactor / this.zoomFactor));
-            } else if (event.modifiers.command && event.modifiers.option) {
+            } else if (event.modifiers.shift && event.modifiers.option) {
                 paper.view.zoom /= this.zoomFactor;
                 paper.view.center = paper.view.center.subtract(zoomCenter.multiply(moveFactor));
             }
@@ -69,6 +69,7 @@ toolZoomPan.on({
     },
     mousedrag: function (event) {
         if (this.mode == 'zoom') {
+            setCanvasCursor('cursor-zoom-in');
             // If dragging mouse while in zoom mode, switch to zoom-rect instead.
             this.mode = 'zoom-rect';
         } else if (this.mode == 'zoom-rect') {
