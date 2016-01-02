@@ -13,6 +13,7 @@
     <script type="text/javascript" src="js/Rotate.js"></script>
     <script type="text/javascript" src="js/Zoom.js"></script>
     <script type="text/javascript" src="js/Pen.js"></script>
+    <script type="text/javascript" src="js/Circle.js"></script>
     <script type="text/javascript" src="js/Stack.js"></script>
     <script type="text/javascript" src="js/editor.js"></script>
     <link rel="stylesheet" href="node_modules/material-design-lite/material.min.css">
@@ -23,31 +24,35 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div id="menu">
-    <a id="undo" class="mdl-button mdl-js-button mdl-js-ripple-effect">Undo</a>
-    <a id="redo" class="mdl-button mdl-js-button mdl-js-ripple-effect">Redo</a>
-    -
-    <a id="cut" class="mdl-button mdl-js-button mdl-js-ripple-effect">Cut</a>
-    <a id="copy" class="mdl-button mdl-js-button mdl-js-ripple-effect">Copy</a>
-    <a id="paste" class="mdl-button mdl-js-button mdl-js-ripple-effect">Paste</a>
-    -
-    <a id="delete" class="mdl-button mdl-js-button mdl-js-ripple-effect">Delete</a>
-    <a id="save-as-svg" class="mdl-button mdl-js-button mdl-js-ripple-effect">Save as SVG</a>
-    <label for="files" class="mdl-button mdl-js-button mdl-js-ripple-effect">
-        Upload/Insert Image
-    </label>
-    <input style="visibility: hidden; position: absolute;" type="file" id="files" name="files[]" multiple/>
-    <output id="list"></output>
-
-    <input type='text' id="fill-color"/>
-    <input type='text' id="stroke-color"/>
+<div id="hud">
+    <div id="menu">
+        <a id="undo" class="mdl-button mdl-js-button mdl-js-ripple-effect">Undo</a>
+        <a id="redo" class="mdl-button mdl-js-button mdl-js-ripple-effect">Redo</a>
+        -
+        <a id="cut" class="mdl-button mdl-js-button mdl-js-ripple-effect">Cut</a>
+        <a id="copy" class="mdl-button mdl-js-button mdl-js-ripple-effect">Copy</a>
+        <a id="paste" class="mdl-button mdl-js-button mdl-js-ripple-effect">Paste</a>
+        -
+        <a id="delete" class="mdl-button mdl-js-button mdl-js-ripple-effect">Delete</a>
+        <a id="save-as-svg" class="mdl-button mdl-js-button mdl-js-ripple-effect">Save as SVG</a>
+        <label for="files" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+            Upload/Insert Image
+        </label>
+        <input style="visibility: hidden; position: absolute;" type="file" id="files" name="files[]" multiple/>
+        <output id="list"></output>
+    </div>
+    <ul id="tools" class="tools">
+        <li id="tool-select" class="button"><img src="img/icon-arrow-black.png"/></li>
+        <li id="tool-direct-select" class="button"><img src="img/icon-arrow-white.png"/></li>
+        <li id="tool-pen" class="button"><img src="img/icon-pen.png"/></li>
+        <li id="tool-circle" class="button"><img src="img/cursor-zoom.png"/></li>
+        <li id="tool-zoompan" class="button"><img src="img/icon-hand.png"/></li>
+    </ul>
+    <ul id="property-tools" class="tools">
+        <li class="button"><input type='text' id="fill-color"/></li>
+        <li class="button"><input type='text' id="stroke-color"/></li>
+    </ul>
 </div>
-<ul id="tools">
-    <li id="tool-select" class="button"><img src="img/icon-arrow-black.png"/></li>
-    <li id="tool-direct-select" class="button"><img src="img/icon-arrow-white.png"/></li>
-    <li id="tool-pen" class="button"><img src="img/icon-pen.png"/></li>
-    <li id="tool-zoompan" class="button"><img src="img/icon-hand.png"/></li>
-</ul>
 <canvas id="canvas" resize></canvas>
 </body>
 </html>

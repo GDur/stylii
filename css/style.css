@@ -3,92 +3,143 @@ body {
     overflow: hidden;
     font-family: Helvetica, sans-serif;
     font-size: 14px;
+}
+
+#canvas {
     background-image: url("check-pattern.png");
-    /*background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==);*/
+    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.16);
 
+    margin: auto;
+    display: -webkit-box;
 }
 
-#tools {
-    top: 50px;
-
-}
-
-#tools, #menu {
-    position: fixed;
-    width: 28px;
-    padding: 0;
-    background: rgba(255, 255, 255, 0.8);
+#hud {
     margin: 4px;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.4);
 }
 
-#menu {
-    position: fixed;
-    width: auto;
+#menu,
+.tools {
+    background: rgba(255, 255, 255, 0.89);
+    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.16);
 }
 
-label span,
-#menu a {
-    min-width: inherit;
-    color: #000;
-    cursor: default;
+div#menu {
+    width: 100%;
+    text-align: -webkit-center;
+    margin: 0px auto;
 }
 
-.mdl-button {
-    min-width: inherit;
+ul.tools {
+    padding: 5px 0px;
+    width: 50px;
+    list-style-type: none;
 }
 
-#menu a.disabled {
-    color: #888;
+.tools li {
+    text-align: center;
 }
 
-label span:hover,
-#menu a:hover {
-    color: #fff;
+.tools li:hover {
+    background: #eee;
 }
 
-#menu a.disabled:hover {
-    background: transparent;
-    color: #888;
+ul#tools {
+    float: left;
 }
 
-#menu a:active {
-    background: rgba(0, 0, 0, 1.0);
-    color: #ddd;
-}
-
-.button {
-    display: inline-block;
-    cursor: default;
-    padding: 4px;
-}
-
-.button:last-child {
-    margin-bottom: 0px;
-}
-
-.button:hover {
-    background: #222;
-}
-
-.button.selected {
-    background: #888;
-}
-
-.button.selected:hover {
-    background: rgba(0, 0, 0, 0.9);
+ul#property-tools {
+    float: right;
 }
 
 .sp-replacer.sp-light {
     background: none;
     border: none;
+    display: block;
 }
 
-.mdl-button:hover {
-    background-color: rgba(158, 158, 158, .2);
-    background: rgba(0, 0, 0, 0.9);
-    color: #fff !important;
-}
+/*#tools, #property-tools {*/
+/*top: 50px;*/
+/*}*/
+
+/*#property-tools {*/
+/*position: fixed;*/
+/*/!*width: 28px;*!/*/
+/*right: 0;*/
+/*padding: 0;*/
+/*background: rgba(255, 255, 255, 0.8);*/
+/*margin: 4px;*/
+/*box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.4);*/
+/*}*/
+
+/*#tools, #menu {*/
+/*position: fixed;*/
+/*width: 28px;*/
+/*padding: 0;*/
+/*background: rgba(255, 255, 255, 0.8);*/
+/*margin: 4px;*/
+/*box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.4);*/
+/*}*/
+
+/*#menu {*/
+/*position: static;*/
+/*width: 99%;*/
+/*margin: 7px auto;*/
+/*}*/
+
+/*label span,*/
+/*#menu a {*/
+/*min-width: inherit;*/
+/*color: #000;*/
+/*cursor: default;*/
+/*}*/
+
+/*.mdl-button {*/
+/*min-width: inherit;*/
+/*}*/
+
+/*#menu a.disabled {*/
+/*color: #888;*/
+/*}*/
+
+/*label span:hover,*/
+/*#menu a:hover {*/
+/*color: #fff;*/
+/*}*/
+
+/*#menu a.disabled:hover {*/
+/*background: transparent;*/
+/*color: #888;*/
+/*}*/
+
+/*#menu a:active {*/
+/*background: rgba(0, 0, 0, 1.0);*/
+/*color: #ddd;*/
+/*}*/
+
+/*.tools input,*/
+/*.button {*/
+/*display: flex;*/
+/*cursor: default;*/
+/*padding: 4px;*/
+/*}*/
+
+/*.button:last-child {*/
+/*margin-bottom: 0px;*/
+/*}*/
+
+/*.button:hover {*/
+/*background: #222;*/
+/*}*/
+
+/*.button.selected {*/
+/*background: #888;*/
+/*}*/
+
+/*.button.selected:hover,*/
+/*.mdl-button:hover {*/
+/*background: rgba(0, 0, 0, 0.9);*/
+/*color: #fff !important;*/
+/*}*/
 
 .cursor-pen-create {
     cursor: url('../img/cursor-pen-create.png') 6 2, default;
@@ -218,5 +269,3 @@ label span:hover,
     cursor: url('../img/cursor-rotate-315.png') 9 9, default;
 }
 
-#canvas {
-}

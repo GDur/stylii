@@ -1,11 +1,7 @@
-var previousResult = null;
-
 var downloadAsSVG = function (fileName) {
-
     if (!fileName) {
-        fileName = "paperjs_example.svg"
+        fileName = "stylii.svg"
     }
-
     var url = "data:image/svg+xml;utf8," + encodeURIComponent(paper.project.exportSVG({asString: true}));
 
     var link = document.createElement("a");
@@ -14,9 +10,7 @@ var downloadAsSVG = function (fileName) {
     link.click();
 }
 
-
 var undo = null;
-
 
 function setCanvasCursor(name) {
     $("#canvas").removeClass(function (index, css) {
@@ -131,7 +125,6 @@ function findItemById(id) {
 
 
 var clipboard = null;
-var mirror = false
 var selectionBounds = null;
 var selectionBoundsShape = null;
 var drawSelectionBounds = 0;
@@ -443,14 +436,27 @@ $(document).ready(function () {
     path1.strokeColor = 'black';
 
     var path2 = new paper.Path.Circle(new paper.Point(130, 160), 40);
-    path2.fillColor = 'grey';
+    path2.fillColor = 'rgba(0, 138, 255, 0.52)';
     path2.selected = true
 
     var text = new paper.PointText(new paper.Point(130, 370));
     text.justification = 'center';
     text.fillColor = 'black';
     text.content = 'The contents of the point text';
-
+    var path3 = new paper.CompoundPath({
+        children: [
+            new paper.Path.Circle({
+                center: new paper.Point(50, 50),
+                radius: 30
+            }),
+            new paper.Path.Circle({
+                center: new paper.Point(60, 50),
+                radius: 10
+            })
+        ],
+        fillColor: 'black',
+        selected: true
+    });
     undo.snapshot("Init");
 
     $("#tool-select").click(function () {
@@ -546,6 +552,20 @@ $(document).ready(function () {
         showInput: true,
         allowEmpty: true,
         showAlpha: true,
+        showInitial: true,
+        localStorageKey: "spectrum.homepage",
+        showPalette: true,
+        showSelectionPalette: true,
+        palette: [
+            ["#000", "#444", "#666", "#999", "#ccc", "#eee", "#f3f3f3", "#fff"],
+            ["#f00", "#f90", "#ff0", "#0f0", "#0ff", "#00f", "#90f", "#f0f"],
+            ["#f4cccc", "#fce5cd", "#fff2cc", "#d9ead3", "#d0e0e3", "#cfe2f3", "#d9d2e9", "#ead1dc"],
+            ["#ea9999", "#f9cb9c", "#ffe599", "#b6d7a8", "#a2c4c9", "#9fc5e8", "#b4a7d6", "#d5a6bd"],
+            ["#e06666", "#f6b26b", "#ffd966", "#93c47d", "#76a5af", "#6fa8dc", "#8e7cc3", "#c27ba0"],
+            ["#c00", "#e69138", "#f1c232", "#6aa84f", "#45818e", "#3d85c6", "#674ea7", "#a64d79"],
+            ["#900", "#b45f06", "#bf9000", "#38761d", "#134f5c", "#0b5394", "#351c75", "#741b47"],
+            ["#600", "#783f04", "#7f6000", "#274e13", "#0c343d", "#073763", "#20124d", "#4c1130"]
+        ],
         move: function (color) {
             var selected = paper.project.selectedItems;
             for (var i = 0; i < selected.length; i++) {
@@ -553,6 +573,7 @@ $(document).ready(function () {
                     continue;
                 selected[i].fillColor = toRGBAString(color)
             }
+            paper.view.draw();
         }
     });
     $("#stroke-color").spectrum({
@@ -561,6 +582,19 @@ $(document).ready(function () {
         showInput: true,
         allowEmpty: true,
         showAlpha: true,
+        showInitial: true,
+        showPalette: true,
+        showSelectionPalette: true,
+        //palette: [
+        //    ["#000", "#444", "#666", "#999", "#ccc", "#eee", "#f3f3f3", "#fff"],
+        //    ["#f00", "#f90", "#ff0", "#0f0", "#0ff", "#00f", "#90f", "#f0f"],
+        //    ["#f4cccc", "#fce5cd", "#fff2cc", "#d9ead3", "#d0e0e3", "#cfe2f3", "#d9d2e9", "#ead1dc"],
+        //    ["#ea9999", "#f9cb9c", "#ffe599", "#b6d7a8", "#a2c4c9", "#9fc5e8", "#b4a7d6", "#d5a6bd"],
+        //    ["#e06666", "#f6b26b", "#ffd966", "#93c47d", "#76a5af", "#6fa8dc", "#8e7cc3", "#c27ba0"],
+        //    ["#c00", "#e69138", "#f1c232", "#6aa84f", "#45818e", "#3d85c6", "#674ea7", "#a64d79"],
+        //    ["#900", "#b45f06", "#bf9000", "#38761d", "#134f5c", "#0b5394", "#351c75", "#741b47"],
+        //    ["#600", "#783f04", "#7f6000", "#274e13", "#0c343d", "#073763", "#20124d", "#4c1130"]],
+        //localStorageKey: "spectrum.homepage",
         move: function (color) {
             var selected = paper.project.selectedItems;
             for (var i = 0; i < selected.length; i++) {
@@ -568,11 +602,26 @@ $(document).ready(function () {
                     continue;
                 selected[i].strokeColor = toRGBAString(color)
             }
+            paper.view.draw();
         }
     });
 
     toolStack.activate();
     toolStack.setToolMode('tool-direct-select');
+    $(window).resize(resizeAndRedrawCanvas);
+
+    paper.view.desiredWidth = 600; //$(window).width();
+    paper.view.desiredHeight = 400; //$('#canvasContainer').height();
+    function resizeAndRedrawCanvas() {
+
+        canvas.width = paper.view.desiredWidth * paper.view.zoom
+        canvas.height = paper.view.desiredHeight * paper.view.zoom
+
+        paper.view.viewSize = new paper.Size(paper.view.desiredWidth * paper.view.zoom, paper.view.desiredHeight * paper.view.zoom);
+        paper.view.draw();
+    }
+
+    paper.view.viewSize = new paper.Size(paper.view.desiredWidth, paper.view.desiredHeight);
 
     paper.view.draw();
 });
